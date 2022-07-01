@@ -22,40 +22,21 @@ var sonuc = ""
 
 document.querySelector(".button-container").addEventListener("click", function(event) {
     if (event.target.tagName === "BUTTON") {
-        
-        if (event.target.innerText === "C") {
-            ilkSayi = "0"
-            islem = ""
-            ikinciSayi = ""
-            sonuc = ""
-        }
-        if ( event.target.innerText === "="){
-
-            if (islem === "X") {
-                sonuc = carp(ilkSayi, ikinciSayi)
+        if (event.target.innerText === "←") {
+            if (ikinciSayi !== "") {
+                ikinciSayi = ikinciSayi.slice(0, -1);
+            }else if (islem !== "") {
+                islem = islem.slice(0, -1)
             }
+            if (ilkSayi !== "") {
+                console.log(ilkSayi.slice(0, -1))
 
-            if (islem === "/"){
-                sonuc = bol(ilkSayi, ikinciSayi);
+                ilkSayi = ilkSayi.slice(0, -1)
             }
-
-            if (islem === "+"){
-                sonuc = topla(ilkSayi, ikinciSayi);
-            }
-
-            if (islem === "-"){
-                sonuc = cikar(ilkSayi, ikinciSayi);
-            
-            }
-        }
-
-        
-
-            if ( ilkSayi !== 0 && islem !== "") {
+        } else {
+            if (ilkSayi !== "0" && islem !== "") {
                 ikinciSayi = ikinciSayi + event.target.innerText 
-            } 
-
-            else{
+            } else {
                 if (event.target.innerText === "X" || event.target.innerText === "/" || event.target.innerText === "+" || event.target.innerText === "-")
                 {
                     islem = event.target.innerText 
@@ -67,11 +48,39 @@ document.querySelector(".button-container").addEventListener("click", function(e
                         ilkSayi = event.target.innerText
                     }
                     else {
-                        ilkSayi = ilkSayi + event.target.innerText; 
+                        ilkSayi = ilkSayi + event.target.innerText;
                     }
                 }
             }
+        }
+    
 
+
+        if (event.target.innerText === "C") {
+            ilkSayi = "0"
+            islem = ""
+            ikinciSayi = ""
+            sonuc = ""
+        }
+        if ( event.target.innerText === "="){
+
+            if (islem === "X") {
+                sonuc = carp(parseInt(ilkSayi), parseInt(ikinciSayi))
+            }
+
+            if (islem === "/"){
+                sonuc = bol(parseInt(ilkSayi), parseInt(ikinciSayi))
+            }
+
+            if (islem === "+"){
+                sonuc = topla(parseInt(ilkSayi), parseInt(ikinciSayi))
+            }
+
+            if (islem === "-"){
+                sonuc = cikar(parseInt(ilkSayi), parseInt(ikinciSayi))
+            
+            }
+        }
     }
 
 
