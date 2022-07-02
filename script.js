@@ -25,12 +25,9 @@ document.querySelector(".button-container").addEventListener("click", function(e
         if (event.target.innerText === "←") {
             if (ikinciSayi !== "") {
                 ikinciSayi = ikinciSayi.slice(0, -1);
-            }else if (islem !== "") {
+            } else if (islem !== "") {
                 islem = islem.slice(0, -1)
-            }
-            if (ilkSayi !== "") {
-                console.log(ilkSayi.slice(0, -1))
-
+            } else {
                 ilkSayi = ilkSayi.slice(0, -1)
             }
         } else {
