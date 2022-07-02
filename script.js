@@ -22,6 +22,13 @@ var sonuc = ""
 
 document.querySelector(".button-container").addEventListener("click", function(event) {
     if (event.target.tagName === "BUTTON") {
+        if (sonuc !== "") {
+            ilkSayi = "0"
+            islem = ""
+            ikinciSayi = ""
+            sonuc = ""
+        }
+        
         if (event.target.innerText === "←") {
             if (ikinciSayi !== "") {
                 ikinciSayi = ikinciSayi.slice(0, -1);
