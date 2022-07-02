@@ -82,11 +82,11 @@
 .row0 {
     background-color: black;
     color: white; 
-    width: 400px;
+    max-width: 400px;
     height: 85px;
     text-align: right;
     padding-right: 10px;
-    overflow: auto;
+    overflow: auto; 
 }
 
 button {
@@ -109,4 +109,8 @@ button:hover {
 .row0 p {
     margin-top: 19px;
     font-size: 30px;
+}
+
+.button-container {
+    max-width: 425px;
 }
